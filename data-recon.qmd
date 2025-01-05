@@ -1,0 +1,23 @@
+---
+title: "Data Recon"
+format: html
+editor: source
+---
+
+Poking around data.ct.gov.  Going to pull payroll data and convert to parquet.
+
+
+```{r}
+
+ds_lab_app_token <- keyring::key_get("ds-lab-app-token")
+
+payroll_api <- "https://data.ct.gov/resource/9m78-yc88.json"
+
+payroll_data <- 
+  RSocrata::read.socrata(
+    url = "https://data.ct.gov/resource/9m78-yc88.json",
+    app_token = ds_lab_app_token
+  )
+
+```
+
