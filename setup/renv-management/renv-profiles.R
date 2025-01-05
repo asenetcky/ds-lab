@@ -30,7 +30,8 @@ c(
   "DBI",
   "odbc",
   "dbplyr",
-  "fs"
+  "fs",
+  "keyring"
 ) |>
   purrr::walk(
     \(pkg) renv::install(pkg, prompt = FALSE)
